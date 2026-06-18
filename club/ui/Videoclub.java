@@ -1,4 +1,4 @@
-package biblioteca.ui;
+package club.ui;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import biblioteca.dominio.Contenido;
-import biblioteca.dominio.EstadoContenido;
-import biblioteca.dominio.Persona;
-import biblioteca.dominio.Suscriptor;
-import biblioteca.excepcion.ContenidoNoDisponibleException;
-import biblioteca.repositorio.IRepositorio;
-import biblioteca.repositorio.RepositorioArchivo;
+import club.dominio.Contenido;
+import club.dominio.EstadoContenido;
+import club.dominio.Persona;
+import club.dominio.Suscriptor;
+import club.excepcion.ContenidoNoDisponibleException;
+import club.repositorio.IRepositorio;
+import club.repositorio.RepositorioArchivo;
 
 public class Videoclub {
     private ArrayList<Contenido> catalogo;

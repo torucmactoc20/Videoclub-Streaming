@@ -1,4 +1,4 @@
-package biblioteca.dominio;
+package club.dominio;
 
 import java.io.Serializable;
 import java.util.Objects;

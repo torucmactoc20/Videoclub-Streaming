@@ -1,4 +1,4 @@
-package biblioteca.repositorio;
+package club.repositorio;
 
 import java.util.List;
 

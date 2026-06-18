@@ -1,4 +1,4 @@
-package biblioteca.dominio;
+package club.dominio;
 
 public class Documental extends Contenido {
     private static final long serialVersionUID = 1L;

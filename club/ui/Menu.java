@@ -1,8 +1,8 @@
-package biblioteca.ui;
+package club.ui;
 
 import java.util.Scanner;
-import biblioteca.dominio.*;
-import biblioteca.excepcion.ContenidoNoDisponibleException;
+import club.dominio.*;
+import club.excepcion.ContenidoNoDisponibleException;
 
 public class Menu {
     private Videoclub videoclub;
@@ -34,18 +34,10 @@ public class Menu {
                 opcion = Integer.parseInt(scanner.nextLine());
 
                 switch (opcion) {
-                    case 1:
-                        menuAgregarContenido();
-                        break;
-                    case 2:
-                        menuRegistrarSuscriptor();
-                        break;
-                    case 3:
-                        menuAlquilar();
-                        break;
-                    case 4:
-                        menuDevolver();
-                        break;
+                    case 1: menuAgregarContenido(); break;
+                    case 2: menuRegistrarSuscriptor(); break;
+                    case 3: menuAlquilar(); break;
+                    case 4: menuDevolver(); break;
                     case 5:
                         System.out.println("\n--- CONTENIDO DISPONIBLE ---");
                         videoclub.obtenerContenidoDisponible().forEach(Contenido::mostrarInfo);

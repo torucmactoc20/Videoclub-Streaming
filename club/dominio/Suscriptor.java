@@ -1,4 +1,4 @@
-package biblioteca.dominio;
+package club.dominio;
 
 import java.util.ArrayList;
 

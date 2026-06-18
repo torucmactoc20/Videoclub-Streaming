@@ -1,7 +1,7 @@
-package biblioteca.util;
+package club.util;
 
 import java.util.Comparator;
-import biblioteca.dominio.Contenido;
+import club.dominio.Contenido;
 
 public class CompararPorTitulo implements Comparator<Contenido> {
     @Override
