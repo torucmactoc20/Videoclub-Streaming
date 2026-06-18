@@ -1,7 +1,6 @@
 package club.dominio;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 public abstract class Persona implements Comparable<Persona>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -23,20 +22,26 @@ public abstract class Persona implements Comparable<Persona>, Serializable {
     public abstract void mostrarInfo();
 
     @Override
-    public int compareTo(Persona otra) {
-        return this.apellido.compareToIgnoreCase(otra.getApellido());
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Persona persona = (Persona) o;
-        return dni == persona.dni;
-    }
-
-    @Override
     public int hashCode() {
-        return Objects.hash(dni);
+        return dni;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+        Persona other = (Persona) obj;
+        return this.dni == other.dni;
+    }
+
+    @Override
+    public int compareTo(Persona o) {
+        return this.apellido.compareTo(o.apellido);
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + " Apellido: " + apellido;
     }
 }

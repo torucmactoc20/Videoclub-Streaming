@@ -5,33 +5,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RepositorioArchivo<T> implements IRepositorio<T> {
-    private String nombreArchivo;
+
+    private File archivo;
 
     public RepositorioArchivo(String nombreArchivo) {
-        this.nombreArchivo = nombreArchivo;
+        this.archivo = new File(nombreArchivo);
     }
 
     @Override
     public void guardar(List<T> elementos) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(nombreArchivo))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(
+                new FileOutputStream(archivo))) {
             oos.writeObject(elementos);
         } catch (IOException e) {
-            System.out.println("Error al guardar en archivo: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public List<T> consultar() {
-        File file = new File(nombreArchivo);
-        if (!file.exists()) {
+        if (!archivo.exists()) {
             return new ArrayList<>();
         }
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nombreArchivo))) {
+        try (ObjectInputStream ois = new ObjectInputStream(
+                new FileInputStream(archivo))) {
             return (List<T>) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Error al cargar archivo (Se creará una lista vacía): " + e.getMessage());
-            return new ArrayList<>();
+            e.printStackTrace();
         }
+        return new ArrayList<>();
     }
 }

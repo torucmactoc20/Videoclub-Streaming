@@ -12,6 +12,12 @@ public class Empleado extends Persona {
 
     public int getLegajo() { return legajo; }
 
+    public void registrarContenido(Contenido c) {
+        System.out.println("El empleado " + getNombre() + " " + getApellido()
+                + " registró el contenido:");
+        c.mostrarInfo();
+    }
+
     @Override
     public void mostrarInfo() {
         System.out.println("Empleado [Legajo: " + legajo + "] "
